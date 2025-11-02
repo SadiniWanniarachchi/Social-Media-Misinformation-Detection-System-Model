@@ -13,9 +13,13 @@ imbalanced-learn>=0.10.0
 matplotlib>=3.6.0
 seaborn>=0.12.0
 wordcloud>=1.9.0
+plotly>=5.14.0
 
 # Model Persistence
 joblib>=1.2.0
+
+# Web Application
+streamlit>=1.28.0
 
 # Jupyter (Optional - for notebook usage)
 jupyter>=1.0.0
