@@ -2,7 +2,17 @@
 
 A comprehensive machine learning system for detecting misinformation in social media content using advanced NLP techniques, ensemble learning, and calibrated classifiers.
 
-## 🎯 Overview
+## � Live Demo
+
+**Try it now!** → [Interactive Web App](https://social-media-misinformation-detection-system-model-u9berph6m2p.streamlit.app/)
+
+Experience the misinformation detector in action with our live Streamlit application. Simply paste any news article or social media post to get instant predictions with confidence scores and detailed analysis.
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://social-media-misinformation-detection-system-model-u9berph6m2p.streamlit.app/)
+
+---
+
+## �🎯 Overview
 
 This project implements a sophisticated misinformation detection system that combines multiple machine learning algorithms with text preprocessing, feature engineering, and probability calibration to accurately identify fake news and misinformation in social media posts.
 
