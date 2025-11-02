@@ -12,8 +12,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
 [![Streamlit](https://img.shields.io/badge/Streamlit-Live-red.svg)](https://social-media-misinformation-detection-system-model-u9berph6m2p.streamlit.app/)[![Streamlit](https://img.shields.io/badge/Streamlit-Live-red.svg)](https://social-media-misinformation-detection-system-model-u9berph6m2p.streamlit.app/)
 
 [![Accuracy](https://img.shields.io/badge/Accuracy-86.95%25-success.svg)](README.md)[![Accuracy](https://img.shields.io/badge/Accuracy-86.95%25-success.svg)](README.md)
