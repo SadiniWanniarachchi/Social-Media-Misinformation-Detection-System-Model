@@ -94,13 +94,6 @@ st.markdown("""
         border: 2px solid #e0e0e0;
         background: white;
     }
-    .info-card {
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 10px;
-        border-left: 4px solid #667eea;
-        margin: 1rem 0;
-    }
     .footer {
         text-align: center;
         padding: 2rem;
@@ -371,21 +364,22 @@ def main():
     
     with col2:
         st.subheader("ℹ️ How It Works")
-        st.markdown("""
-        <div class="info-card">
-        <b>1. Text Preprocessing</b><br>
-        Cleans and normalizes input text
-        <br><br>
-        <b>2. Feature Extraction</b><br>
-        Extracts TF-IDF and statistical features
-        <br><br>
-        <b>3. AI Analysis</b><br>
-        Ensemble model predicts authenticity
-        <br><br>
-        <b>4. Confidence Score</b><br>
-        Returns probability-based verdict
-        </div>
-        """, unsafe_allow_html=True)
+        with st.container():
+            st.markdown("""
+            **1. Text Preprocessing**  
+            Cleans and normalizes input text
+            
+            **2. Feature Extraction**  
+            Extracts TF-IDF and statistical features
+            
+            **3. AI Analysis**  
+            Ensemble model predicts authenticity
+            
+            **4. Confidence Score**  
+            Returns probability-based verdict
+            """)
+            
+            st.info("💡 **Model**: Calibrated Ensemble  \n**Accuracy**: 86.95%")
     
     # Analysis results
     if analyze_button and user_input:
@@ -538,28 +532,20 @@ def main():
             col1, col2 = st.columns(2)
             
             with col1:
-                st.markdown("""
-                <div class="info-card">
-                <b>🎯 Interpretation</b><br><br>
-                """, unsafe_allow_html=True)
+                st.markdown("#### 🎯 Interpretation")
                 
                 if prob_diff < 0.15:
-                    st.write(f"⚠️ **Close probabilities** ({prob_diff*100:.1f}% difference)")
+                    st.warning(f"⚠️ **Close probabilities** ({prob_diff*100:.1f}% difference)")
                     st.write("The model is uncertain. Consider additional verification from trusted sources.")
                 elif result['confidence'] >= 0.85:
-                    st.write(f"✅ **High confidence** ({result['confidence']*100:.0f}% certain)")
+                    st.success(f"✅ **High confidence** ({result['confidence']*100:.0f}% certain)")
                     st.write("The model is very confident in this prediction.")
                 else:
-                    st.write(f"📊 **Moderate confidence** ({result['confidence']*100:.0f}%)")
+                    st.info(f"📊 **Moderate confidence** ({result['confidence']*100:.0f}%)")
                     st.write("The model has reasonable certainty in this prediction.")
-                
-                st.markdown("</div>", unsafe_allow_html=True)
             
             with col2:
-                st.markdown("""
-                <div class="info-card">
-                <b>📝 Text Statistics</b><br><br>
-                """, unsafe_allow_html=True)
+                st.markdown("#### 📝 Text Statistics")
                 
                 features = result['features']
                 st.write(f"📏 **Length:** {features['text_length']} characters")
@@ -567,8 +553,6 @@ def main():
                 st.write(f"📊 **Avg Word Length:** {features['avg_word_length']:.1f}")
                 st.write(f"❗ **Exclamation Marks:** {features['exclamation_marks']}")
                 st.write(f"❓ **Question Marks:** {features['question_marks']}")
-                
-                st.markdown("</div>", unsafe_allow_html=True)
             
             # Cleaned text preview
             with st.expander("🔍 View Cleaned Text", expanded=False):
